@@ -1681,6 +1681,18 @@ section {
   color: #fff;
 }
 
+.case-modal .case-download-outline {
+  margin-top: 10px;
+  background: transparent;
+  border: 1px solid #34b7a7;
+  color: #34b7a7;
+}
+
+.case-modal .case-download-outline:hover {
+  background: #34b7a7;
+  color: #fff;
+}
+
 .case-modal .case-download i {
   font-size: 16px;
   vertical-align: -3px;
