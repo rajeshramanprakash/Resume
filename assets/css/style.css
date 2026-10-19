@@ -1651,6 +1651,58 @@ section {
   background: #cdeee9;
 }
 
+.case-modal .case-shot {
+  display: block;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.case-modal .case-shot:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.case-modal .case-download {
+  display: block;
+  margin-top: 14px;
+  padding: 8px 16px;
+  border-radius: 50px;
+  background: #34b7a7;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.case-modal .case-download:hover {
+  background: #1d685f;
+  color: #fff;
+}
+
+.case-modal .case-download i {
+  font-size: 16px;
+  vertical-align: -3px;
+}
+
+.case-modal .case-code {
+  margin: 0;
+  padding: 14px 16px;
+  border-radius: 8px;
+  background: #f6f8fa;
+  border: 1px solid #e5e7eb;
+  font-size: 12.5px;
+  line-height: 1.5;
+  max-height: 260px;
+  overflow: auto;
+}
+
+.case-modal .case-code code {
+  color: #24292f;
+  word-break: normal;
+}
+
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
@@ -2103,6 +2155,19 @@ html[data-theme="dark"] .case-modal .close {
 
 html[data-theme="dark"] .case-modal .case-flow li:not(:last-child)::after {
   background: #2a2f36;
+}
+
+html[data-theme="dark"] .case-modal .case-shot {
+  border-color: #2a2f36;
+}
+
+html[data-theme="dark"] .case-modal .case-code {
+  background: #13161a;
+  border-color: #2a2f36;
+}
+
+html[data-theme="dark"] .case-modal .case-code code {
+  color: #c9d1d9;
 }
 
 html[data-theme="dark"] .contact .php-email-form input::placeholder,

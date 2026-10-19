@@ -25,7 +25,7 @@
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/style.css?v=3" rel="stylesheet">
+  <link href="assets/css/style.css?v=4" rel="stylesheet">
   <script>try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-theme','dark');}catch(e){}</script>
 
   <!-- =======================================================
@@ -81,7 +81,7 @@
           <p>Backend case studies from enterprise systems I have built: scalable APIs, document automation and queue-driven processing with Laravel and MySQL.</p>
         </div>
 
-        <div class="row">
+        <div class="row justify-content-center">
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
             <div class="case-card">
@@ -157,6 +157,33 @@
             </div>
           </div>
 
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="case-card">
+              <span class="case-badge"><i class="bx bx-receipt"></i> REST API &amp; PDF Generation</span>
+              <h3>Dynamic Invoice PDF Engine</h3>
+              <p class="case-subtitle">Laravel 13 &middot; DomPDF</p>
+              <p class="case-overview">A REST API that turns a JSON billing payload into a print-ready A4 invoice PDF, built with clean, layered architecture.</p>
+              <h4 class="case-label">Key Contributions</h4>
+              <ul class="case-points">
+                <li>Layered design: thin controller, <code>FormRequest</code> validation and an <code>InvoicePdfService</code> for business logic.</li>
+                <li>Exact money math in integer cents, so line totals, tax and grand total always add up.</li>
+                <li>UTF-8 Blade template tuned for DomPDF, with font subsetting to keep files around 30&nbsp;KB.</li>
+                <li>Covered by PHPUnit unit and feature tests.</li>
+              </ul>
+              <ul class="case-tech">
+                <li>Laravel 13</li>
+                <li>DomPDF</li>
+                <li>Blade</li>
+                <li>REST APIs</li>
+                <li>PHPUnit</li>
+              </ul>
+              <div class="case-actions">
+                <a href="#" class="case-link" data-toggle="modal" data-target="#modal-invoice-engine"><i class="bx bx-show"></i> See It in Action</a>
+                <a href="assets/docs/sample-invoice.pdf" class="case-link" target="_blank" rel="noopener"><i class="bx bx-download"></i> Sample PDF</a>
+              </div>
+            </div>
+          </div>
+
         </div>
 
         <div class="case-nda" data-aos="fade-up">
@@ -227,6 +254,51 @@
               <li><strong>Laravel Scheduler (CRON)</strong> runs <code>RevertTemporaryPricingCommand</code> on time.</li>
               <li><strong>Temporary prices</strong> revert automatically when their window ends.</li>
             </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade case-modal" id="modal-invoice-engine" tabindex="-1" role="dialog" aria-labelledby="modal-invoice-engine-title" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modal-invoice-engine-title">Dynamic Invoice PDF Engine</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-5 mb-4 mb-md-0">
+                <a href="assets/docs/sample-invoice.pdf" target="_blank" rel="noopener" class="case-shot">
+                  <img src="assets/img/portfolio/invoice-pdf-engine.png?v=2" alt="Generated A4 invoice PDF with line items, tax and total due" class="img-fluid" loading="lazy">
+                </a>
+                <a href="assets/docs/sample-invoice.pdf" class="btn case-download" target="_blank" rel="noopener"><i class="bx bx-download"></i> Download Sample PDF</a>
+              </div>
+              <div class="col-md-7">
+                <p>One endpoint, <code>POST /api/v1/invoices/generate-pdf</code>, returns the invoice as a PDF download. Request flow:</p>
+                <ol class="case-flow">
+                  <li><strong>Client</strong> (Postman, SPA or another service) posts the invoice as JSON.</li>
+                  <li><strong>GenerateInvoiceRequest</strong> validates the client details and every line item, returning <code>422</code> errors for bad input.</li>
+                  <li><strong>InvoiceController</strong> stays thin and hands the validated data to the service.</li>
+                  <li><strong>InvoicePdfService</strong> calculates line totals, subtotal, tax and grand total in integer cents.</li>
+                  <li><strong>Blade + DomPDF</strong> render an A4 portrait, UTF-8 PDF that downloads as <code>invoice-{number}.pdf</code>.</li>
+                </ol>
+                <p class="mb-2"><strong>Sample request</strong></p>
+<pre class="case-code"><code>{
+  "invoice_number": "INV-2026-0042",
+  "client_name": "Globex Corporation",
+  "client_email": "accounts@globex.example",
+  "client_address": "221B Baker Street, London",
+  "items": [
+    { "description": "Website redesign",
+      "quantity": 1, "unit_price": 2500 },
+    { "description": "API development (hours)",
+      "quantity": 40, "unit_price": 85.50 }
+  ],
+  "tax_percent": 18
+}</code></pre>
+              </div>
+            </div>
           </div>
         </div>
       </div>
