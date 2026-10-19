@@ -122,17 +122,26 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #header .logo {
-  font-size: 32px;
+  font-size: 30px;
   margin: 0;
   padding: 0;
   line-height: 1;
-  font-weight: 400;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
 #header .logo a {
   color: #222222;
+  transition: 0.3s;
+}
+
+#header .logo a span {
+  color: #34b7a7;
+}
+
+#header .logo a:hover {
+  color: #34b7a7;
 }
 
 #header .logo img {
@@ -398,6 +407,23 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .header-social-links a:hover {
+  color: #34b7a7;
+}
+
+.theme-toggle {
+  border: 0;
+  background: none;
+  padding: 0 0 0 10px;
+  font-size: 18px;
+  line-height: 1;
+  color: #222222;
+  cursor: pointer;
+  vertical-align: middle;
+  outline: none !important;
+  transition: 0.3s;
+}
+
+.theme-toggle:hover {
   color: #34b7a7;
 }
 
@@ -1416,4 +1442,129 @@ section {
 
 .services .icon-box:hover {
   transform: translateY(-4px);
+}
+
+/*--------------------------------------------------------------
+# Dark Mode
+--------------------------------------------------------------*/
+html[data-theme="dark"] body {
+  background: #121417;
+  color: #c9d1d9;
+}
+
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] h4,
+html[data-theme="dark"] h5,
+html[data-theme="dark"] h6 {
+  color: #e6edf3;
+}
+
+html[data-theme="dark"] #preloader {
+  background: #121417;
+}
+
+html[data-theme="dark"] #header,
+html[data-theme="dark"] #footer {
+  background: #181b1f;
+  color: #c9d1d9;
+  box-shadow: 0px 0px 25px 0 rgba(0, 0, 0, 0.4);
+}
+
+html[data-theme="dark"] #header .logo a,
+html[data-theme="dark"] .header-social-links a,
+html[data-theme="dark"] .theme-toggle {
+  color: #e6edf3;
+}
+
+html[data-theme="dark"] #header .logo a:hover,
+html[data-theme="dark"] .header-social-links a:hover,
+html[data-theme="dark"] .theme-toggle:hover {
+  color: #34b7a7;
+}
+
+html[data-theme="dark"] .nav-menu a {
+  color: #9aa4af;
+}
+
+html[data-theme="dark"] .nav-menu a:hover,
+html[data-theme="dark"] .nav-menu .active > a,
+html[data-theme="dark"] .nav-menu li:hover > a {
+  color: #ffffff;
+}
+
+html[data-theme="dark"] .mobile-nav {
+  background: #1c1f24;
+}
+
+html[data-theme="dark"] .mobile-nav a {
+  color: #e6edf3;
+}
+
+html[data-theme="dark"] .about .content h3,
+html[data-theme="dark"] .about .content .focus-title,
+html[data-theme="dark"] .resume .resume-title,
+html[data-theme="dark"] .skills .skill-card h4,
+html[data-theme="dark"] .services .icon-box h4,
+html[data-theme="dark"] .contact .info h4 {
+  color: #e6edf3;
+}
+
+html[data-theme="dark"] .skills .skill-card,
+html[data-theme="dark"] .services .icon-box {
+  background: #1c1f24;
+  box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.35);
+}
+
+html[data-theme="dark"] .skills .skill-card h4 i,
+html[data-theme="dark"] .resume .resume-item h5,
+html[data-theme="dark"] .contact .info i {
+  background: rgba(52, 183, 167, 0.15);
+}
+
+html[data-theme="dark"] .services .icon-box .icon svg path {
+  fill: #2a2f36;
+}
+
+html[data-theme="dark"] .resume .resume-item h4 {
+  color: #5fd3c4;
+}
+
+html[data-theme="dark"] .resume .resume-item::before {
+  background: #121417;
+}
+
+html[data-theme="dark"] .portfolio #portfolio-flters li {
+  color: #c9d1d9;
+}
+
+html[data-theme="dark"] .portfolio #portfolio-flters li:hover,
+html[data-theme="dark"] .portfolio #portfolio-flters li.filter-active {
+  color: #fff;
+}
+
+html[data-theme="dark"] .contact .info,
+html[data-theme="dark"] .contact .php-email-form {
+  background: transparent;
+}
+
+html[data-theme="dark"] .contact .info p {
+  color: #9aa4af;
+}
+
+html[data-theme="dark"] .contact .php-email-form input,
+html[data-theme="dark"] .contact .php-email-form textarea {
+  background: #1c1f24;
+  border-color: #2a2f36;
+  color: #e6edf3;
+}
+
+html[data-theme="dark"] .contact .php-email-form input::placeholder,
+html[data-theme="dark"] .contact .php-email-form textarea::placeholder {
+  color: #7d8590;
+}
+
+html[data-theme="dark"] .contact iframe {
+  filter: invert(90%) hue-rotate(180deg);
 }

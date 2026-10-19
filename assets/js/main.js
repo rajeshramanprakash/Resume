@@ -108,6 +108,25 @@
     return false;
   });
 
+  // Dark mode toggle
+  function setThemeIcon() {
+    var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+    $('.theme-toggle i').attr('class', dark ? 'bx bx-sun' : 'bx bx-moon');
+  }
+  setThemeIcon();
+  $(document).on('click', '.theme-toggle', function() {
+    var dark = document.documentElement.getAttribute('data-theme') !== 'dark';
+    if (dark) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+    }
+    try {
+      localStorage.setItem('theme', dark ? 'dark' : 'light');
+    } catch (e) {}
+    setThemeIcon();
+  });
+
   // Age from birthdate
   $('[data-birthdate]').each(function() {
     var birth = new Date($(this).data('birthdate'));
