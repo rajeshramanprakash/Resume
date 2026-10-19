@@ -411,20 +411,32 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .theme-toggle {
-  border: 0;
-  background: none;
-  padding: 0 0 0 10px;
-  font-size: 18px;
+  -webkit-appearance: none;
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  margin-left: 12px;
+  padding: 0;
+  border: 1px solid #e2e2e2;
+  border-radius: 50%;
+  background: transparent;
+  font-size: 17px;
   line-height: 1;
   color: #222222;
   cursor: pointer;
   vertical-align: middle;
   outline: none !important;
+  box-shadow: none;
   transition: 0.3s;
 }
 
 .theme-toggle:hover {
   color: #34b7a7;
+  border-color: #34b7a7;
+  background: #effbf9;
 }
 
 @media (max-width: 992px) {
@@ -942,6 +954,90 @@ section {
   top: 0;
   background: #fff;
   border: 2px solid #34b7a7;
+}
+
+.resume .project-card {
+  width: 100%;
+  margin-bottom: 30px;
+  padding: 25px;
+  background: #fff;
+  border-top: 3px solid #34b7a7;
+  box-shadow: 0px 0 35px 0 rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.resume .project-card:hover {
+  transform: translateY(-4px);
+}
+
+.resume .project-card h4 {
+  font-size: 20px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  color: #1d685f;
+  margin-bottom: 4px;
+}
+
+.resume .project-card .project-sub {
+  font-style: italic;
+  color: #6c757d;
+  margin-bottom: 12px;
+}
+
+.resume .project-card .project-role {
+  font-size: 14px;
+  font-weight: 600;
+  color: #34b7a7;
+  margin-bottom: 12px;
+}
+
+.resume .project-card .project-role i,
+.resume .project-card .project-link i {
+  vertical-align: middle;
+  font-size: 16px;
+}
+
+.resume .project-card .project-tech {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 15px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.resume .project-card .project-tech li {
+  padding: 3px 12px;
+  border: 1px solid #34b7a7;
+  border-radius: 50px;
+  color: #34b7a7;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+}
+
+.resume .project-card .project-points {
+  padding-left: 18px;
+  font-size: 15px;
+}
+
+.resume .project-card .project-points li {
+  padding-bottom: 8px;
+}
+
+.resume .project-card .project-points code {
+  color: #1d685f;
+  font-size: 13px;
+  word-break: break-word;
+}
+
+.resume .project-card .project-link {
+  margin-top: auto;
+  margin-bottom: 0;
+  font-size: 14px;
+  color: #6c757d;
 }
 
 /*--------------------------------------------------------------
@@ -1478,6 +1574,15 @@ html[data-theme="dark"] .theme-toggle {
   color: #e6edf3;
 }
 
+html[data-theme="dark"] .theme-toggle {
+  border-color: #2a2f36;
+}
+
+html[data-theme="dark"] .theme-toggle:hover {
+  border-color: #34b7a7;
+  background: rgba(52, 183, 167, 0.15);
+}
+
 html[data-theme="dark"] #header .logo a:hover,
 html[data-theme="dark"] .header-social-links a:hover,
 html[data-theme="dark"] .theme-toggle:hover {
@@ -1512,6 +1617,7 @@ html[data-theme="dark"] .contact .info h4 {
 }
 
 html[data-theme="dark"] .skills .skill-card,
+html[data-theme="dark"] .resume .project-card,
 html[data-theme="dark"] .services .icon-box {
   background: #1c1f24;
   box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.35);
@@ -1527,8 +1633,15 @@ html[data-theme="dark"] .services .icon-box .icon svg path {
   fill: #2a2f36;
 }
 
-html[data-theme="dark"] .resume .resume-item h4 {
+html[data-theme="dark"] .resume .resume-item h4,
+html[data-theme="dark"] .resume .project-card h4,
+html[data-theme="dark"] .resume .project-card .project-points code {
   color: #5fd3c4;
+}
+
+html[data-theme="dark"] .resume .project-card .project-sub,
+html[data-theme="dark"] .resume .project-card .project-link {
+  color: #9aa4af;
 }
 
 html[data-theme="dark"] .resume .resume-item::before {
