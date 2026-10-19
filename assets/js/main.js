@@ -127,6 +127,35 @@
     setThemeIcon();
   });
 
+  // Hero typing effect
+  $('.typed').each(function() {
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var el = this;
+    var items = String($(el).data('typed-items')).split(',').map(function(s) {
+      return s.trim();
+    });
+    var index = 0;
+    var pos = items[0].length;
+    var deleting = true;
+
+    function tick() {
+      var word = items[index];
+      pos += deleting ? -1 : 1;
+      el.textContent = word.slice(0, pos);
+      var delay = deleting ? 45 : 95;
+      if (!deleting && pos === word.length) {
+        deleting = true;
+        delay = 1800;
+      } else if (deleting && pos === 0) {
+        deleting = false;
+        index = (index + 1) % items.length;
+        delay = 350;
+      }
+      setTimeout(tick, delay);
+    }
+    setTimeout(tick, 2200);
+  });
+
   // Age from birthdate
   $('[data-birthdate]').each(function() {
     var birth = new Date($(this).data('birthdate'));

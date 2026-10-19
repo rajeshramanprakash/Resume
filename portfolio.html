@@ -5,8 +5,8 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Badges - Rajesh Raman Prakash</title>
-  <meta content="Certifications and badges earned by Rajesh Raman Prakash." name="description">
+  <title>Projects - Rajesh Raman Prakash</title>
+  <meta content="Backend case studies by Rajesh Raman Prakash: enterprise CRM APIs, automated document generation and queue-based pricing engines built with Laravel and MySQL." name="description">
   <meta content="Rajesh Raman Prakash, software engineer, backend developer, Laravel developer, PHP, REST API, MySQL, portfolio, New Delhi" name="keywords">
 
   <!-- Favicons -->
@@ -25,7 +25,7 @@
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/style.css?v=2" rel="stylesheet">
+  <link href="assets/css/style.css?v=3" rel="stylesheet">
   <script>try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-theme','dark');}catch(e){}</script>
 
   <!-- =======================================================
@@ -52,7 +52,7 @@
           <li><a href="about.html">About</a></li>
           <li><a href="resume.html">Resume</a></li>
           <li><a href="skills.html">Skills</a></li>
-          <li class="active"><a href="portfolio.html">Badges</a></li>
+          <li class="active"><a href="portfolio.html">Projects</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav><!-- .nav-menu -->
@@ -72,150 +72,165 @@
 
   <main id="main">
 
-    <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio">
+    <!-- ======= Case Studies Section ======= -->
+    <section id="projects" class="case-studies">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Badges</h2>
-          <p>Certifications and badges I have earned while learning networking, cloud computing,
-Java and software development.</p>
+          <h2>Projects</h2>
+          <p>Backend case studies from enterprise systems I have built: scalable APIs, document automation and queue-driven processing with Laravel and MySQL.</p>
         </div>
 
-        <div class="row" data-aos="fade-up" data-aos-delay="100">
-          <div class="col-lg-12 d-flex justify-content-center">
-            <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">Cisco</li>
-              <li data-filter=".filter-card">IBM</li>
-              <li data-filter=".filter-web">Other</li>
-            </ul>
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="case-card">
+              <span class="case-badge"><i class="bx bx-buildings"></i> Enterprise Backend / CRM</span>
+              <h3>Enterprise CRM Platform</h3>
+              <p class="case-subtitle">QRPE.CRM</p>
+              <p class="case-overview">Core backend logic and scalable RESTful API architecture for enterprise customer relationship management.</p>
+              <h4 class="case-label">Key Contributions</h4>
+              <ul class="case-points">
+                <li>Engineered complex database schemas and heavily optimized MySQL queries for high throughput.</li>
+                <li>Developed robust API endpoints facilitating high data consistency across frontend interfaces.</li>
+                <li>Integrated secure authentication and role-based access controls (RBAC).</li>
+              </ul>
+              <ul class="case-tech">
+                <li>PHP</li>
+                <li>Laravel</li>
+                <li>MySQL</li>
+                <li>REST APIs</li>
+                <li>Postman</li>
+              </ul>
+              <div class="case-actions">
+                <a href="#" class="case-link" data-toggle="modal" data-target="#modal-crm"><i class="bx bx-sitemap"></i> Architecture Overview</a>
+                <span class="case-status"><i class="bx bx-lock-alt"></i> Private Enterprise Project (NDA)</span>
+              </div>
+            </div>
           </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+            <div class="case-card">
+              <span class="case-badge"><i class="bx bx-file"></i> Document Automation &amp; Reporting</span>
+              <h3>Automated Billing &amp; Medical Document Engine</h3>
+              <p class="case-subtitle">CareOurClaim</p>
+              <p class="case-overview">Automated generation pipeline for hospital billing, laboratory reports and discharge summaries.</p>
+              <h4 class="case-label">Key Contributions</h4>
+              <ul class="case-points">
+                <li>Designed pixel-perfect, dynamic Blade templates and converted them to high-performance PDFs via DomPDF.</li>
+                <li>Optimized relational queries to eliminate bottlenecks during heavy batch report generation.</li>
+              </ul>
+              <ul class="case-tech">
+                <li>Laravel</li>
+                <li>MySQL</li>
+                <li>DomPDF</li>
+                <li>Blade</li>
+              </ul>
+              <div class="case-actions">
+                <a href="#" class="case-link" data-toggle="modal" data-target="#modal-billing"><i class="bx bx-book-open"></i> Case Study</a>
+                <span class="case-status"><i class="bx bx-lock-alt"></i> Internal Enterprise System</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+            <div class="case-card">
+              <span class="case-badge"><i class="bx bx-layer"></i> Queues &amp; Micro-tasks</span>
+              <h3>High-Throughput Pricing &amp; Background Scheduler</h3>
+              <p class="case-subtitle">Bulk Pricing Rule Engine</p>
+              <p class="case-overview">Asynchronous rule engine designed for heavy, automated bulk pricing updates.</p>
+              <h4 class="case-label">Key Contributions</h4>
+              <ul class="case-points">
+                <li>Implemented queued background workers (<code>ApplyBulkPricingRuleJob</code>) to eliminate server bottlenecks.</li>
+                <li>Created automated Artisan console commands (<code>RevertTemporaryPricingCommand</code>) with CRON scheduling.</li>
+              </ul>
+              <ul class="case-tech">
+                <li>Laravel Queues</li>
+                <li>Artisan CLI</li>
+                <li>MySQL</li>
+                <li>Redis Basics</li>
+              </ul>
+              <div class="case-actions">
+                <a href="#" class="case-link" data-toggle="modal" data-target="#modal-pricing"><i class="bx bx-git-branch"></i> View Workflow</a>
+                <span class="case-status"><i class="bx bx-code-alt"></i> GitHub Gist / Concept</span>
+              </div>
+            </div>
+          </div>
+
         </div>
 
-        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/ibm1.jpeg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Cisco</h4>
-                <p>Cisco</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/ibm1.jpeg" data-gall="portfolioGallery" class="venobox" title="Cisco"><i class="bx bx-plus"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/ibm2.jpeg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Solo</h4>
-                <p>Learn</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/ibm2.jpeg" data-gall="portfolioGallery" class="venobox" title="Solo"><i class="bx bx-plus"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/Screenshot from 2021-06-08 06-00-17.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Cisco</h4>
-                <p>IOT</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/Screenshot from 2021-06-08 06-00-17.png" data-gall="portfolioGallery" class="venobox" title="Cisco"><i class="bx bx-plus"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/ibm.jpeg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>IBM</h4>
-                <p>Card 2</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/ibm.jpeg" data-gall="portfolioGallery" class="venobox" title="IBM"><i class="bx bx-plus"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/Screenshot from 2021-06-08 05-56-10.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Java</h4>
-                <p>Web</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/Screenshot from 2021-06-08 05-56-10.png" data-gall="portfolioGallery" class="venobox" title="Java"><i class="bx bx-plus"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/Screenshot from 2021-06-08 05-54-59.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Career</h4>
-                <p>App</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/Screenshot from 2021-06-08 05-54-59.png" data-gall="portfolioGallery" class="venobox" title="Career"><i class="bx bx-plus"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/ibm3.jpeg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Soft</h4>
-                <p>Card</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/ibm3.jpeg" data-gall="portfolioGallery" class="venobox" title="Soft"><i class="bx bx-plus"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/ibm0.jpeg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>IBM</h4>
-                <p>Card</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/ibm0.jpeg" data-gall="portfolioGallery" class="venobox" title="IBM"><i class="bx bx-plus"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/Screenshot from 2021-06-08 06-13-10.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Java</h4>
-                <p>Web4</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/Screenshot from 2021-06-08 06-13-10.png" data-gall="portfolioGallery" class="venobox" title="Java"><i class="bx bx-plus"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
+        <div class="case-nda" data-aos="fade-up">
+          <i class="bx bx-shield-quarter"></i>
+          <p><strong>Note:</strong> Proprietary enterprise systems are under NDA. Architecture details and code walkthroughs can be demonstrated during technical discussions.</p>
         </div>
 
       </div>
-    </section><!-- End Portfolio Section -->
+    </section><!-- End Case Studies Section -->
+
+    <!-- ======= Case Study Modals ======= -->
+    <div class="modal fade case-modal" id="modal-crm" tabindex="-1" role="dialog" aria-labelledby="modal-crm-title" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modal-crm-title">Architecture Overview &middot; QRPE.CRM</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <p>High-level request flow of the CRM backend:</p>
+            <ol class="case-flow">
+              <li><strong>Client / Frontend</strong> sends a request to the REST API.</li>
+              <li><strong>Authentication &amp; RBAC middleware</strong> verifies the user and their role permissions.</li>
+              <li><strong>Laravel controllers &amp; business logic</strong> validate input and apply CRM rules.</li>
+              <li><strong>MySQL</strong> serves data through an indexed schema and optimized queries.</li>
+              <li><strong>JSON response</strong> returns consistent, documented output (tested with Postman).</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade case-modal" id="modal-billing" tabindex="-1" role="dialog" aria-labelledby="modal-billing-title" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modal-billing-title">Case Study &middot; CareOurClaim</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <p><strong>Challenge:</strong> Hospitals need accurate bills, lab reports and discharge summaries generated quickly, often in large batches.</p>
+            <p>Document pipeline:</p>
+            <ol class="case-flow">
+              <li><strong>MySQL</strong> stores patient, billing and lab data.</li>
+              <li><strong>Optimized relational queries</strong> fetch everything a document needs without bottlenecks.</li>
+              <li><strong>Dynamic Blade templates</strong> render pixel-perfect layouts.</li>
+              <li><strong>DomPDF</strong> converts the HTML into print-ready PDFs.</li>
+              <li><strong>Documents</strong> are ready to download or print.</li>
+            </ol>
+            <p class="mb-0"><strong>Outcome:</strong> Consistent, fast document generation, even during heavy batch runs.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade case-modal" id="modal-pricing" tabindex="-1" role="dialog" aria-labelledby="modal-pricing-title" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modal-pricing-title">Workflow &middot; Bulk Pricing Rule Engine</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <ol class="case-flow">
+              <li><strong>Admin</strong> creates a bulk pricing rule.</li>
+              <li><strong>Laravel</strong> dispatches <code>ApplyBulkPricingRuleJob</code> to the queue.</li>
+              <li><strong>Background workers</strong> apply thousands of price updates without blocking web requests.</li>
+              <li><strong>Laravel Scheduler (CRON)</strong> runs <code>RevertTemporaryPricingCommand</code> on time.</li>
+              <li><strong>Temporary prices</strong> revert automatically when their window ends.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
 
   </main><!-- End #main -->
 
@@ -251,7 +266,7 @@ Java and software development.</p>
   <script src="assets/vendor/aos/aos.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="assets/js/main.js?v=2"></script>
+  <script src="assets/js/main.js?v=3"></script>
 
 </body>
 

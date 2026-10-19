@@ -494,12 +494,71 @@ h1, h2, h3, h4, h5, h6 {
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
 }
 
+#hero h2 .typed {
+  color: #5fd3c4;
+  font-weight: 600;
+}
+
+#hero h2 .typed-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.1em;
+  margin-left: 4px;
+  vertical-align: text-bottom;
+  background: #5fd3c4;
+  animation: typed-blink 0.8s step-end infinite;
+}
+
+@keyframes typed-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+#hero .hero-summary {
+  max-width: 560px;
+  margin: 16px 0 0 0;
+  font-size: 17px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+}
+
 #hero .hero-buttons {
-  margin-top: 30px;
+  margin-top: 28px;
 }
 
 #hero .hero-buttons .btn-about {
   margin: 0 12px 10px 0;
+}
+
+#hero .btn-about i {
+  font-size: 15px;
+  vertical-align: -2px;
+  margin-right: 4px;
+}
+
+#hero .hero-social {
+  margin-top: 12px;
+}
+
+#hero .hero-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  font-size: 18px;
+  color: #fff;
+  transition: 0.3s;
+}
+
+#hero .hero-social a:hover {
+  background: #34b7a7;
+  border-color: #34b7a7;
 }
 
 #hero .btn-about {
@@ -545,7 +604,7 @@ h1, h2, h3, h4, h5, h6 {
     padding-bottom: 60px;
   }
   #hero:before {
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 30%, rgba(0, 0, 0, 0.8) 100%);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.6) 35%, rgba(0, 0, 0, 0.85) 100%);
   }
   #hero h1 {
     font-size: 28px;
@@ -555,8 +614,18 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 18px;
     line-height: 24px;
   }
+  #hero .hero-summary {
+    font-size: 15px;
+  }
   #hero .hero-buttons .btn-about {
     margin: 0 6px 10px 6px;
+    padding: 12px 26px;
+  }
+  #hero .hero-buttons .btn-about.btn-outline {
+    padding: 10px 24px;
+  }
+  #hero .hero-social a {
+    margin: 0 5px;
   }
 }
 
@@ -1353,6 +1422,236 @@ section {
 }
 
 /*--------------------------------------------------------------
+# Case Studies
+--------------------------------------------------------------*/
+.case-studies .case-card {
+  width: 100%;
+  margin-bottom: 30px;
+  padding: 28px;
+  background: #fff;
+  border-radius: 10px;
+  border-top: 3px solid #34b7a7;
+  box-shadow: 0px 0 35px 0 rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.case-studies .case-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 10px 40px 0 rgba(0, 0, 0, 0.12);
+}
+
+.case-studies .case-badge {
+  align-self: flex-start;
+  padding: 5px 12px;
+  margin-bottom: 16px;
+  border-radius: 50px;
+  background: #effbf9;
+  color: #1d685f;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.3px;
+}
+
+.case-studies .case-badge i {
+  color: #34b7a7;
+  font-size: 14px;
+  vertical-align: -2px;
+  margin-right: 2px;
+}
+
+.case-studies .case-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.35;
+  color: #222222;
+  margin-bottom: 4px;
+}
+
+.case-studies .case-subtitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: #34b7a7;
+  margin-bottom: 14px;
+}
+
+.case-studies .case-overview {
+  font-size: 15px;
+  color: #555555;
+  margin-bottom: 16px;
+}
+
+.case-studies .case-label {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #222222;
+  margin-bottom: 10px;
+}
+
+.case-studies .case-points {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 18px;
+  font-size: 14px;
+}
+
+.case-studies .case-points li {
+  position: relative;
+  padding: 0 0 8px 22px;
+}
+
+.case-studies .case-points li::before {
+  content: "\e9a8";
+  font-family: "boxicons";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  color: #34b7a7;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.case-studies code,
+.case-modal code {
+  color: #1d685f;
+  font-size: 12.5px;
+  word-break: break-word;
+}
+
+.case-studies .case-tech {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.case-studies .case-tech li {
+  padding: 3px 12px;
+  border: 1px solid #34b7a7;
+  border-radius: 50px;
+  color: #34b7a7;
+  font-size: 12.5px;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+}
+
+.case-studies .case-actions {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid #eeeeee;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.case-studies .case-link {
+  font-size: 14px;
+  font-weight: 600;
+  color: #34b7a7;
+}
+
+.case-studies .case-link:hover {
+  color: #1d685f;
+}
+
+.case-studies .case-link i,
+.case-studies .case-status i {
+  font-size: 16px;
+  vertical-align: -3px;
+}
+
+.case-studies .case-status {
+  font-size: 12.5px;
+  color: #777777;
+}
+
+.case-studies .case-nda {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 18px 22px;
+  border-left: 4px solid #34b7a7;
+  border-radius: 6px;
+  background: #effbf9;
+}
+
+.case-studies .case-nda i {
+  font-size: 24px;
+  color: #34b7a7;
+  line-height: 1;
+}
+
+.case-studies .case-nda p {
+  margin: 0;
+  font-size: 14px;
+  color: #444444;
+}
+
+.case-modal .modal-content {
+  border: 0;
+  border-radius: 10px;
+  border-top: 3px solid #34b7a7;
+}
+
+.case-modal .modal-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1d685f;
+}
+
+.case-modal .modal-body {
+  font-size: 15px;
+}
+
+.case-modal .case-flow {
+  counter-reset: flow;
+  list-style: none;
+  padding: 0;
+}
+
+.case-modal .case-flow li {
+  counter-increment: flow;
+  position: relative;
+  padding: 0 0 14px 40px;
+}
+
+.case-modal .case-flow li::before {
+  content: counter(flow);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #34b7a7;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.case-modal .case-flow li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 12px;
+  top: 28px;
+  bottom: 2px;
+  width: 2px;
+  background: #cdeee9;
+}
+
+/*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
 .contact .info {
@@ -1389,18 +1688,44 @@ section {
   color: #555555;
 }
 
-.contact .info .email, .contact .info .phone {
-  margin-top: 40px;
+.contact .info .info-item + .info-item {
+  margin-top: 28px;
 }
 
-.contact .info .email:hover i, .contact .info .address:hover i, .contact .info .phone:hover i {
+.contact .info .info-item h4 {
+  font-size: 18px;
+  padding-top: 2px;
+}
+
+.contact .info .info-item p {
+  word-break: break-word;
+}
+
+.contact .info .info-item:hover i {
   background: #34b7a7;
   color: #fff;
 }
 
 .contact .php-email-form {
   width: 100%;
+  padding: 30px;
   background: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0 35px 0 rgba(0, 0, 0, 0.08);
+}
+
+.contact .php-email-form .form-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #222222;
+}
+
+.contact .php-email-form label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #444444;
+  margin-bottom: 6px;
 }
 
 .contact .php-email-form .form-group {
@@ -1454,34 +1779,59 @@ section {
 }
 
 .contact .php-email-form input, .contact .php-email-form textarea {
-  border-radius: 4px;
+  border: 1px solid #dfe3e8;
+  border-radius: 8px;
   box-shadow: none;
   font-size: 14px;
+  background: #fafbfc;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
 }
 
 .contact .php-email-form input:focus, .contact .php-email-form textarea:focus {
   border-color: #34b7a7;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(52, 183, 167, 0.15);
 }
 
 .contact .php-email-form input {
-  height: 44px;
+  height: 46px;
+  padding: 10px 14px;
 }
 
 .contact .php-email-form textarea {
-  padding: 10px 12px;
+  padding: 12px 14px;
+  resize: vertical;
 }
 
 .contact .php-email-form button[type="submit"] {
   background: #34b7a7;
   border: 0;
-  padding: 10px 30px 12px 30px;
+  padding: 12px 34px;
   color: #fff;
+  font-weight: 600;
   transition: 0.4s;
   border-radius: 50px;
+  box-shadow: 0 6px 18px rgba(52, 183, 167, 0.3);
+}
+
+.contact .php-email-form button[type="submit"] i {
+  font-size: 17px;
+  vertical-align: -3px;
+  margin-right: 4px;
 }
 
 .contact .php-email-form button[type="submit"]:hover {
-  background: #3dc8b7;
+  background: #2ea596;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 575px) {
+  .contact .php-email-form {
+    padding: 20px;
+  }
+  .contact .php-email-form button[type="submit"] {
+    width: 100%;
+  }
 }
 
 @-webkit-keyframes animate-loading {
@@ -1657,8 +2007,24 @@ html[data-theme="dark"] .portfolio #portfolio-flters li.filter-active {
   color: #fff;
 }
 
-html[data-theme="dark"] .contact .info,
+html[data-theme="dark"] .contact .info {
+  background: transparent;
+}
+
 html[data-theme="dark"] .contact .php-email-form {
+  background: #1c1f24;
+  box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.35);
+}
+
+html[data-theme="dark"] .contact .php-email-form .form-title {
+  color: #e6edf3;
+}
+
+html[data-theme="dark"] .contact .php-email-form label {
+  color: #c9d1d9;
+}
+
+html[data-theme="dark"] .contact .php-email-form .loading {
   background: transparent;
 }
 
@@ -1668,9 +2034,75 @@ html[data-theme="dark"] .contact .info p {
 
 html[data-theme="dark"] .contact .php-email-form input,
 html[data-theme="dark"] .contact .php-email-form textarea {
-  background: #1c1f24;
+  background: #15181c;
   border-color: #2a2f36;
   color: #e6edf3;
+}
+
+html[data-theme="dark"] .contact .php-email-form input:focus,
+html[data-theme="dark"] .contact .php-email-form textarea:focus {
+  background: #15181c;
+  border-color: #34b7a7;
+}
+
+html[data-theme="dark"] .case-studies .case-card {
+  background: #1c1f24;
+  box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.35);
+}
+
+html[data-theme="dark"] .case-studies .case-card h3,
+html[data-theme="dark"] .case-studies .case-label {
+  color: #e6edf3;
+}
+
+html[data-theme="dark"] .case-studies .case-overview,
+html[data-theme="dark"] .case-studies .case-nda p {
+  color: #c9d1d9;
+}
+
+html[data-theme="dark"] .case-studies .case-badge {
+  background: rgba(52, 183, 167, 0.15);
+  color: #5fd3c4;
+}
+
+html[data-theme="dark"] .case-studies .case-actions {
+  border-top-color: #2a2f36;
+}
+
+html[data-theme="dark"] .case-studies .case-link:hover {
+  color: #5fd3c4;
+}
+
+html[data-theme="dark"] .case-studies .case-status {
+  color: #9aa4af;
+}
+
+html[data-theme="dark"] .case-studies .case-nda {
+  background: rgba(52, 183, 167, 0.1);
+}
+
+html[data-theme="dark"] .case-studies code,
+html[data-theme="dark"] .case-modal code,
+html[data-theme="dark"] .case-modal .modal-title {
+  color: #5fd3c4;
+}
+
+html[data-theme="dark"] .case-modal .modal-content {
+  background: #1c1f24;
+  color: #c9d1d9;
+}
+
+html[data-theme="dark"] .case-modal .modal-header {
+  border-bottom-color: #2a2f36;
+}
+
+html[data-theme="dark"] .case-modal .close {
+  color: #e6edf3;
+  text-shadow: none;
+}
+
+html[data-theme="dark"] .case-modal .case-flow li:not(:last-child)::after {
+  background: #2a2f36;
 }
 
 html[data-theme="dark"] .contact .php-email-form input::placeholder,
