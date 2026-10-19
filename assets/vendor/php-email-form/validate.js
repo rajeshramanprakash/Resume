@@ -131,6 +131,9 @@
       headers: { Accept: 'application/json' },
       timeout: 40000
     }).done( function(msg){
+      if (typeof msg === 'string') {
+        try { msg = JSON.parse(msg); } catch (e) {}
+      }
       if (typeof msg === 'object' && msg !== null) {
         msg = (msg.success === true || msg.success === 'true') ? 'OK' : (msg.message || '');
       }
