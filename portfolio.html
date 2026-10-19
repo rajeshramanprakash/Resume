@@ -25,7 +25,7 @@
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/style.css?v=5" rel="stylesheet">
+  <link href="assets/css/style.css?v=6" rel="stylesheet">
   <script>try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-theme','dark');}catch(e){}</script>
 
   <!-- =======================================================
@@ -179,6 +179,7 @@
               </ul>
               <div class="case-actions">
                 <a href="#" class="case-link" data-toggle="modal" data-target="#modal-invoice-engine"><i class="bx bx-show"></i> See It in Action</a>
+                <a href="#" class="case-link" data-toggle="modal" data-target="#modal-invoice-try"><i class="bx bx-play-circle"></i> Try It Live</a>
                 <a href="assets/docs/sample-invoice.pdf" class="case-link" target="_blank" rel="noopener"><i class="bx bx-download"></i> Sample PDF</a>
                 <a href="https://github.com/rajeshramanprakash/invoice-pdf-engine" class="case-link" target="_blank" rel="noopener"><i class="bx bxl-github"></i> View Code</a>
               </div>
@@ -306,6 +307,70 @@
       </div>
     </div>
 
+    <div class="modal fade case-modal" id="modal-invoice-try" tabindex="-1" role="dialog" aria-labelledby="modal-invoice-try-title" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modal-invoice-try-title">Try It Live &middot; Invoice PDF Engine</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <p>Edit the details below and generate a real PDF from the live Laravel API.</p>
+            <form id="invoice-demo-form" class="invoice-demo" novalidate>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="demo-invoice-number">Invoice number</label>
+                  <input type="text" class="form-control" id="demo-invoice-number" name="invoice_number" value="INV-2026-0001" maxlength="50" required>
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="demo-tax">Tax %</label>
+                  <input type="number" class="form-control" id="demo-tax" name="tax_percent" value="18" min="0" max="100" step="0.01">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="demo-client-name">Client name</label>
+                  <input type="text" class="form-control" id="demo-client-name" name="client_name" value="Globex Corporation" maxlength="255" required>
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="demo-client-email">Client email</label>
+                  <input type="email" class="form-control" id="demo-client-email" name="client_email" value="accounts@globex.example" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="demo-client-address">Client address</label>
+                <textarea class="form-control" id="demo-client-address" name="client_address" rows="2" required>221B Baker Street
+New Delhi 110001</textarea>
+              </div>
+
+              <label>Line items</label>
+              <div class="demo-items" id="demo-items">
+                <div class="form-row demo-item">
+                  <div class="col-6"><input type="text" class="form-control" name="description" value="Website redesign" maxlength="500" aria-label="Description" required></div>
+                  <div class="col-2"><input type="number" class="form-control" name="quantity" value="1" min="1" step="1" aria-label="Quantity" required></div>
+                  <div class="col-3"><input type="number" class="form-control" name="unit_price" value="25000" min="0" step="0.01" aria-label="Unit price" required></div>
+                  <div class="col-1"><button type="button" class="demo-remove" aria-label="Remove item"><i class="bx bx-x"></i></button></div>
+                </div>
+                <div class="form-row demo-item">
+                  <div class="col-6"><input type="text" class="form-control" name="description" value="Laravel API development (hours)" maxlength="500" aria-label="Description" required></div>
+                  <div class="col-2"><input type="number" class="form-control" name="quantity" value="40" min="1" step="1" aria-label="Quantity" required></div>
+                  <div class="col-3"><input type="number" class="form-control" name="unit_price" value="1500" min="0" step="0.01" aria-label="Unit price" required></div>
+                  <div class="col-1"><button type="button" class="demo-remove" aria-label="Remove item"><i class="bx bx-x"></i></button></div>
+                </div>
+              </div>
+              <button type="button" class="demo-add" id="demo-add-item"><i class="bx bx-plus"></i> Add item</button>
+
+              <div class="demo-actions">
+                <button type="submit" class="btn case-download" id="demo-submit"><i class="bx bx-file"></i> Generate PDF</button>
+                <p class="demo-note">Hosted on Render's free tier. If the server is asleep, the first request can take up to a minute.</p>
+              </div>
+              <div class="demo-status" id="demo-status" role="status" aria-live="polite"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
@@ -341,6 +406,7 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js?v=3"></script>
+  <script src="assets/js/invoice-demo.js?v=1"></script>
 
 </body>
 

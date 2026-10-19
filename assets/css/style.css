@@ -1698,6 +1698,119 @@ section {
   vertical-align: -3px;
 }
 
+.case-modal .invoice-demo label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #444444;
+  margin-bottom: 4px;
+}
+
+.case-modal .invoice-demo .form-control {
+  font-size: 14px;
+  border-radius: 6px;
+  border-color: #dfe3e8;
+  box-shadow: none;
+}
+
+.case-modal .invoice-demo .form-control:focus {
+  border-color: #34b7a7;
+}
+
+.case-modal .demo-item {
+  margin-bottom: 8px;
+}
+
+.case-modal .demo-remove,
+.case-modal .demo-add {
+  border: 0;
+  background: transparent;
+  color: #34b7a7;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 0;
+  cursor: pointer;
+}
+
+.case-modal .demo-remove {
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
+  color: #9aa4af;
+}
+
+.case-modal .demo-remove:hover:not(:disabled) {
+  color: #d9534f;
+}
+
+.case-modal .demo-remove:disabled,
+.case-modal .demo-add:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.case-modal .demo-add i {
+  font-size: 16px;
+  vertical-align: -3px;
+}
+
+.case-modal .demo-actions {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+}
+
+.case-modal .demo-actions .case-download {
+  display: inline-block;
+  margin-top: 0;
+  padding: 9px 24px;
+}
+
+.case-modal .demo-actions .case-download:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.case-modal .demo-note {
+  flex: 1;
+  min-width: 220px;
+  margin: 0;
+  font-size: 12.5px;
+  color: #777777;
+}
+
+.case-modal .demo-status:empty {
+  display: none;
+}
+
+.case-modal .demo-status {
+  margin-top: 16px;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.case-modal .demo-status ul {
+  margin: 6px 0 0;
+  padding-left: 18px;
+}
+
+.case-modal .demo-status-info {
+  background: #effbf9;
+  color: #1d685f;
+}
+
+.case-modal .demo-status-success {
+  background: #e8f7ee;
+  color: #1e7b45;
+}
+
+.case-modal .demo-status-error {
+  background: #fdecec;
+  color: #a94442;
+}
+
 .case-modal .case-code {
   margin: 0;
   padding: 14px 16px;
@@ -2180,6 +2293,39 @@ html[data-theme="dark"] .case-modal .case-code {
 
 html[data-theme="dark"] .case-modal .case-code code {
   color: #c9d1d9;
+}
+
+html[data-theme="dark"] .case-modal .invoice-demo label {
+  color: #c9d1d9;
+}
+
+html[data-theme="dark"] .case-modal .invoice-demo .form-control {
+  background: #15181c;
+  border-color: #2a2f36;
+  color: #e6edf3;
+}
+
+html[data-theme="dark"] .case-modal .invoice-demo .form-control:focus {
+  border-color: #34b7a7;
+}
+
+html[data-theme="dark"] .case-modal .demo-note {
+  color: #9aa4af;
+}
+
+html[data-theme="dark"] .case-modal .demo-status-info {
+  background: rgba(52, 183, 167, 0.12);
+  color: #5fd3c4;
+}
+
+html[data-theme="dark"] .case-modal .demo-status-success {
+  background: rgba(46, 160, 67, 0.15);
+  color: #56d364;
+}
+
+html[data-theme="dark"] .case-modal .demo-status-error {
+  background: rgba(248, 81, 73, 0.12);
+  color: #ff7b72;
 }
 
 html[data-theme="dark"] .contact .php-email-form input::placeholder,
